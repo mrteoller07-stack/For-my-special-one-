@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Divya ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3, #c084fc);
+    color: white;
+    overflow-x: hidden;
+    padding: 20px;
+}
+
+.card {
+    width: 100%;
+    max-width: 380px;
+    padding: 35px 25px;
+    text-align: center;
+    border-radius: 25px;
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.4);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    animation: appear 1.2s ease;
+}
+
+.heart {
+    font-size: 65px;
+    animation: beat 1s infinite;
+}
+
+h1 {
+    margin: 15px 0;
+    font-size: 32px;
+}
+
+p {
+    font-size: 17px;
+    line-height: 1.8;
+    margin: 15px 0;
+}
+
+button {
+    margin-top: 15px;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 30px;
+    background: white;
+    color: #ff4f81;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+#message {
+    display: none;
+    margin-top: 22px;
+    font-size: 18px;
+    line-height: 1.8;
+    animation: appear 1s ease;
+}
+
+.footer {
+    margin-top: 25px;
+    font-size: 13px;
+}
+
+.petal {
+    position: fixed;
+    top: -30px;
+    font-size: 22px;
+    animation: fall linear infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes beat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.18); }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="heart">💗</div>
+
+    <h1>Hey Divya! 🌸</h1>
+
+    <p>
+        Pata hai Divya? ✨<br>
+        Duniya mein bahut log khoobsurat hote hain,
+        lekin kuch log apni smile se hi
+        sabka dil jeet lete hain. 🫶🏻
+    </p>
+
+    <p>
+        Aur tum unhi mein se ek ho. 💕<br>
+        Tumhari smile, tumhari simplicity,
+        aur tumhara cute sa andaaz
+        tumhe aur bhi special banata hai. 🌷
+    </p>
+
+    <button onclick="showMessage()">
+        Divya, ek baat sunogi? 💌
+    </button>
+
+    <div id="message">
+        ❤️ Divya, tumhari khoobsurati sirf
+        tumhare chehre mein nahi,
+        balki tumhari personality mein bhi hai. 🦋
+        <br><br>
+        Hamesha aise hi muskurati rehna,
+        kyunki tumhari smile bahut pyari hai. 🌸✨
+        <br><br>
+        Stay beautiful, Divya! 💗
+    </div>
+
+    <div class="footer">
+        Made with ❤️ just for you, Divya 🌹
+    </div>
+
+</div>
+
+<script>
+function showMessage() {
+    const message = document.getElementById("message");
+    message.style.display = "block";
+}
+
+for (let i = 0; i < 25; i++) {
+    let petal = document.createElement("div");
+    petal.className = "petal";
+    petal.innerHTML = Math.random() > 0.5 ? "💗" : "🌸";
+    petal.style.left = Math.random() * 100 + "vw";
+    petal.style.animationDuration = (4 + Math.random() * 6) + "s";
+    petal.style.animationDelay = Math.random() * 5 + "s";
+    document.body.appendChild(petal);
+}
+</script>
+
+</body>
+</html>
